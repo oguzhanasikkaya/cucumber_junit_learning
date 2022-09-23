@@ -1,0 +1,12 @@
+-What is a framework?
+    >A framework defines a set of rules or best practices which we  can follow
+        in a systematic way to achieve the desired result
+    >test automation frameworks deal with best practices to achieve the goals of
+        our automaton project
+-Why are we using framework?
+    >Framework is a code structure that  helps to make code maintenance easy
+    >Without frameworks, we will place the code as well as daya in the same place
+        which is neither reusable nor readable
+    >Reusability
+
+

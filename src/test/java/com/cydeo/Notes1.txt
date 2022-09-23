@@ -1,0 +1,28 @@
+-MVP: MINIMUM VIABLE PRODUCT
+
+-DDT: DATA DRIVEN TESTING FRAME WORK
+    >Data Driven Testing: Execute the same test against different test daya
+    >Data Driven Testing Framework: is the framework we are able to read data
+     from external file and use it in our source code.
+    >We can get the daya from:
+        >MS Excel
+        >Ms Access
+        >Database
+        >Features files
+        >Configuration.properties
+-Keyword Driven Testing:
+    >Creating testing structure based on some keywords that are executable.
+    >This requires a lot of time to invest in to even make it work, but also
+        it is hard to maintain,and hard to scale since the object repository,
+        and keyword repository have to me maintained and expanded as the framework
+        gets bigger.
+-TDD  : TEST DRIVEN DEVELOPMENT(BUG FREE DEVELOPMENT)
+    >There is a repeating development  cycle with TDD
+        1-Write tests before writing any source code.
+        2-Run the tests, and tests will fail
+        3-Write minimum amount of code to make the tests pass
+        4-Run the tests, and tests will pass.
+        5-REFACTOR AND REPEAT
+
+
+
