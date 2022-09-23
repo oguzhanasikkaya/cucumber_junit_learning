@@ -25,4 +25,47 @@
         5-REFACTOR AND REPEAT
 
 
+-In TDD developers are writing @Test in the preferred PROGRAMMING LANGUAGE
+-That's why it is not readable or understandable for the non-technical team members of the temam
+-That's why we will be using BDD
+
+-@Test (s) are written in programming language
+-Scenarios are written in English in Gherkin language
+
+-BDD has 2 layers
+    >1 Business layer : FEATURES FILES
+        >Features files will be storing the different features, scenarios, and re-usable
+            steps in Gherkin language
+        >Business side is mostly for collaborating with non-technical people
+    >2 Implementation layer: STEP DEFINITIONS
+        >Technical people implement the 'STEP DEFINITIONS' to convert step into concrete actions
+--------------------------------------------------------------------------------------------------
+-Why are we not using TestNG and using JUNIT?
+    >1  Because the community mostly using Cucumber with JUNIT
+        -more questions
+        -more answers
+        -more demand
+        -more opportunities
+    >2  We don't need all annotations coming from TestNG
+-Is Cucumber a testing tool?
+    >   No it is not. Cucumber just a BDD implementation tool.
+    >   Therefore, it does not come with any assertions or any programming logic
+    >   That's why we have to use the dependencies with "cucumber-java", "cucumber-junit"
+        to be able to develop some programming logic and also be able to generate
+        some test approach with assertions.
+
+TestNG Assertions: Assert.assertTrue(boolean, "failure message")
+JUNIT Assertions:  Assert.assertTrue("failure message", boolean)
+--------------------------------------------------------------------------------------------------
+- Dryrun: turns of the running of step_definitions.
+-If I don't want to actually run my code, and just want to get my snippets for implementing,
+    I will turn on by gibing "true" value
+
+    dryRun = true --> do not run my step_definitions, but only check if any step is missing snippet
+    dryRun = false --> this will turn off dryRun, and our code will run as expected
+
+
+
+
+
 
