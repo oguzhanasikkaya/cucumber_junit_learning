@@ -20,16 +20,34 @@ public class Login_StepDefinitions {
         //TODO:
         System.out.println("User should see the dashboard");
     }
-
-
-
+    //------------------------------------------------------------
 
     @When("user enters student username")
     public void userEntersStudentUsername() {
+        System.out.println("User enters student username");
+
+
     }
 
     @And("user enters student password")
     public void userEntersStudentPassword() {
+        System.out.println("User enters student password");
     }
+    //------------------------------------------------------------
+
+    @When("user enters admin username")
+    public void userEntersAdminUsername() {
+        System.out.println("User enters admin username");
+    }
+
+    @And("user enters admin password")
+    public void userEntersAdminPassword() {
+        System.out.println("User enters student password");
+    }
+
+
+
+
+
 
 }
