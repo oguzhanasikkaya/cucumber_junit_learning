@@ -1,0 +1,86 @@
+MVP: Minimum Viable Product
+DDT: Data Driven Testing Framework
+    - Data Driven Testing: Executing the same tests against different test data.
+    - Data Driven Testing Framework: is the framework we are able to read data
+                           from an external file and use it in our source code.
+
+    We can get the data from
+        -MS Excel
+        -Ms Access
+        -Database
+        -Features file
+        -Configuration.properties
+
+    -Keyword Driven Testing
+        -Creating testing structure based on some keywords that are executable.
+        -This requires a lot of time to invest in to  even  make it work, but also it is hard to maintain,
+            and hard to scale since the object repositories, and keyword repositories have to me maintained
+            and expanded as the framework gets bigger.
+
+TDD: Test Driven Development:(Bug Free Development)
+-There is a repeating development cycle with TDD.
+
+#1- Write tests before writing any source code.
+#2- Run the tests, and tests will fail.
+#3- Write minimum amount of code to make the tests pass.
+#4- Run the tests, and tests will PASS.
+#5- REFACTOR AND REPEAT
+
+- BDD has 2 layers.
+#1- Business layer: FEATURE FILES
+    - Feature files will be storing the different features, scenarios, and re-usable steps in Gherkin language.
+    - Business side is mostly for collaboration with non-technical people
+#2- Implementation layer: STEP DEFINITIONS
+    - Technical people implement the 'STEP DEFINITIONS' to convert steps (from feature files) into concrete actions.
+-----------------------------------------------------------------------------------------------
+
+-Why are we not using TestNg and using JUNIT?
+    #1 Because the community mostly using Cucumber with JUNIT
+    #2 We don't need all of the annotations coming from TestNG
+
+- Is Cucumber a testing Tool?
+    -No it is not. cucumber is just a BDD implementation tool.
+    -Therefore, it does not come with any assertions or any programming logic.
+    -That's why we have to use the dependencies with "cucumber-java" , "cucumber-junit" to be able to develop some
+            programming logic and also be able to generate some test approach with assertions.
+
+     TestNG Assertions: Assert.assertTrue(boolean, "failure message");
+     JUNIT Assertions: Assert.assertTrue("failure message", boolean);
+     -----------------------------------------------------------------------------------------------
+-Dryrun: tuns on and off the running of step_definitions.
+    -If I don't want to actually run my code, and just want to get my snippets for implementing, I will turn dryRun
+        on by giving "true" value
+
+    dryRun = true --> do not run my step_definitions, but only check if any step is missing snippet
+    dryRun = false --> this will turn off dryRun, and our code will run as expected.
+
+-----------------------------------------------------------------------------------------------
+
+-Given, When, Then, And, But
+    -GIVEN: is used for pre-conditions ( Given user is already logged in and ready to do something )
+    -WHEN: is used for when some actions happen ( When user enters librarian username )
+    -AND: is used for when you many repeating lines of any keyword (  )
+    -BUT: is similar for "AND" but for when we are comparing or some negative scenario happening
+    -THEN: is used for when the verification is happening ( Then user should see title is something )
+-----------------------------------------------------------------------------------------------------
+   TAGS:  Tags are used to group different scenarios together
+        -   or
+        -   and
+        -   and not
+-----------------------------------------------------------------------------------------------------
+RUNNER CLASS
+    Runner class is the class where we control/trigger our whole framework.
+    #1- Runner class should know which type of report we should be generating
+    #2- Runner class should know where we store our step_definitions
+    #3- Runner class should know where we store our feature files
+    #4- Runner class should know if we want to run our tests dryRun = true or false
+    #5- Runner class should know which features or scenarios we want to run through tags
+-----------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
