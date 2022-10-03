@@ -27,10 +27,10 @@ public class Hooks {
     @After
     public void teardownScenario(Scenario scenario){
 
-
-
-        byte[] screenshot = ( (TakesScreenshot)Driver.getDriver() ).getScreenshotAs(OutputType.BYTES);
-        scenario.attach(screenshot,"image/png",scenario.getName());
+        if (scenario.isFailed()) {
+            byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", scenario.getName());
+        }
 
         Driver.closeDriver();
        // System.out.println("===Closing browser using cucumber @After");

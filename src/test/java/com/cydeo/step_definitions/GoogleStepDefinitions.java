@@ -21,7 +21,7 @@ public class GoogleStepDefinitions {
 
     @Then("user sees {string} in the google title")
     public void user_sees_in_the_google_title(String string) {
-        String expectedTitle = string + " - Google'da Ara";
+        String expectedTitle = string + " - Google'da Ar";
         String actualTitle = Driver.getDriver().getTitle();
 
         Assert.assertEquals("Title is not as expected",expectedTitle,actualTitle);
