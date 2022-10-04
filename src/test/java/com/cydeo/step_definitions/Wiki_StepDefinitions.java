@@ -37,7 +37,8 @@ public class Wiki_StepDefinitions {
     }
 
     @Then("User sees {string} is in the image header")
-    public void userSeesIsInTheImageHeader(String arg0) {
+    public void userSeesIsInTheImageHeader(String string) {
+        wikiSearchPage.imageHeader.getText().equals(string);
     }
     
     
