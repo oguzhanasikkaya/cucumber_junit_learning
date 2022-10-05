@@ -8,6 +8,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.lang.reflect.MalformedParameterizedTypeException;
+import java.util.Map;
+
 public class WebTable_StepDefinitions {
 
     WebTablePage webTablePage = new WebTablePage();
@@ -41,6 +44,18 @@ public class WebTable_StepDefinitions {
     @When("user enters username {string} password {string} and logins")
     public void userEntersUsernamePasswordAndLogins(String username, String password) {
         webTablePage.login(username,password);
+
+    }
+
+    @When("user enters below credentials")
+    public void userEntersBelowCredentials(Map< String, String> credentials) {
+
+      //webTablePage.loginButton.sendKeys(credentials.get("username"));
+      //webTablePage.passwordBox.sendKeys(credentials.get("password"));
+     // webTablePage.loginButton.click();
+
+        webTablePage.login(credentials.get("username"), credentials.get("password"));
+
 
     }
 }
