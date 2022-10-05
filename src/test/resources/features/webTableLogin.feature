@@ -7,7 +7,7 @@ Feature: User should be able to using correct credentials
     And   user click to login button
     Then  user should see url contains orders
 
-  @wip
+
   Scenario: Positive Login scenario
     Given user is on the login page of web table app
     When  user enters username "Test" password "Tester" and logins
