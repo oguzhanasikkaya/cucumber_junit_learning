@@ -8,9 +8,12 @@ Feature: Wikipedia search functionally and verification
     Then  User sees "<expectedTitle>" is in the wiki title
     Then  User sees "<expectedMainHeader>" is in the main header
     Examples: search values we are going to be using in this scenario is as below
+    @group1
       | searchValue       | expectedTitle     | expectedMainHeader |
       | Steve Jobs        | Steve Jobs        | Steve Jobs         |
       | Cristiano Ronaldo | Cristiano Ronaldo | Cristiano Ronaldo  |
+    @group2
+      | searchValue       | expectedTitle     | expectedMainHeader |
       | Chuck Norris      | Chuck Norris      | Chuck Norris       |
       | Lady Gaga         | Lady Gaga         | Lady Gaga          |
       | Kate Winslet      | Kate Winslet      | Kate Winslet       |
