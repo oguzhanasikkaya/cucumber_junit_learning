@@ -37,6 +37,24 @@ public class OrderPage {
     @FindBy(name = "card")
     public List<WebElement> cardType;
 
+    @FindBy(name = "cardNo")
+    public WebElement cardnoInput;
+
+    @FindBy(name = "cardExp")
+    public WebElement cardexpInput;
+
+    @FindBy(css = "button[type='submit']")
+    public WebElement processOrderButton;
+
+    @FindBy(xpath = "//button[text()='Reset Fields']")
+    public WebElement button2;
+
+
+    @FindBy(xpath = "//button[text()='Reset Fields']")
+    public WebElement resetButton;
+
+
+
 
 
 
