@@ -2,12 +2,14 @@ package com.cydeo.step_definitions;
 
 import com.cydeo.pages.BasePage;
 import com.cydeo.pages.OrderPage;
+import com.cydeo.pages.ViewAllOrdersPage;
 import com.cydeo.pages.WebTablePage;
 import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -18,6 +20,8 @@ public class Order_StepDefinitions {
     WebTablePage webTablePage = new WebTablePage();
     BasePage basePage = new BasePage();
     OrderPage orderPage = new OrderPage();
+
+    ViewAllOrdersPage viewAllOrdersPage = new ViewAllOrdersPage();
 
     @Given("user is already logged in and on order page")
     public void user_is_already_logged_in_and_on_order_page() {
@@ -73,6 +77,11 @@ public class Order_StepDefinitions {
         orderPage.inputState.sendKeys(arg0);
     }
 
+    @And("user enters zipcode {string}")
+    public void userEntersZipcode(String arg0) {
+        orderPage.inputZip.sendKeys(arg0);
+    }
+
     @And("user enters credit card type {string}")
     public void userEntersCreditCardType(String expectedCardType) {
         List<WebElement> cardTypes = orderPage.cardType;
@@ -87,19 +96,30 @@ public class Order_StepDefinitions {
 
     }
 
+    @And("user enters credit card number {string}")
+    public void userEntersCreditCardNumber(String arg0) {
+        orderPage.cardnoInput.sendKeys(arg0);
+    }
+
     @And("user enters expiry date {string}")
     public void userEntersExpiryDate(String arg0) {
+        orderPage.cardexpInput.sendKeys(arg0);
 
     }
 
     @And("user enters process order button")
     public void userEntersProcessOrderButton() {
-
+        orderPage.processOrderButton.click();
     }
 
 
     @Then("user should see {string} in the first row of the web table")
-    public void userShouldSeeInTheFirstRowOfTheWebTable(String arg0) {
+    public void userShouldSeeInTheFirstRowOfTheWebTable(String expectedName) {
+
+        String actualName = viewAllOrdersPage.firstRowFirstCell.getText();
+
+        Assert.assertEquals(expectedName,actualName);
+
     }
 
 
