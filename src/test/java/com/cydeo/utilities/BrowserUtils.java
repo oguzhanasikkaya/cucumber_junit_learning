@@ -80,9 +80,10 @@ public class BrowserUtils {
     public static void waitAndAssertDisappearing(WebElement webElement){
 
         BrowserUtils.waitForInvisibilityOf(webElement);
-        /** Wait until webElement disappears
-         *  Verify: webElement is not displayed
-         */
+/**
+ * Wait until webElement disappears
+ * Verify: webElement is not displayed
+ */
         try{
             Assert.assertFalse(webElement.isDisplayed());
             //  Assert.assertTrue(!dynamicControlsPage.checkBox.isDisplayed());
@@ -121,6 +122,32 @@ public class BrowserUtils {
         }
         return actualOptionsAsString;
 
+    }
+
+    /**
+     * This method will accept a group radio buttons as a List of WebElement.
+     * It will loop through the List, and click to the radio button with provided attributeValue
+     * @param radioButtons
+     * @param attributeValue
+     */
+     public static void clickRadioButton (List<WebElement> radioButtons,String attributeValue) {
+
+         for (WebElement each : radioButtons) {
+
+             if (each.getAttribute("value").equals(attributeValue)){
+                 each.click();
+             }
+         }
+     }
+
+    public static void clickRadioButton (List<WebElement> radioButtons,String expectedAttributeValue, String actualAttributeValue) {
+
+        for (WebElement each : radioButtons) {
+
+            if (each.getAttribute(actualAttributeValue).equals(expectedAttributeValue)){
+                each.click();
+            }
+        }
     }
 
 
