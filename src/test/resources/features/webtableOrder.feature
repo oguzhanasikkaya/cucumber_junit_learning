@@ -33,7 +33,7 @@ Feature: Web table user order feature
 
     Examples: Famous female scientists
       | productType | quantity | customerName      | street    | city   | state   | zipcode | cardType | cardNumber   | expDate | expectedName      |
-      | MoneyCog    | 2        | IVALID Curie      | London st | London | England | 253181  | Visa     | 123456654321 | 12/24   | Marie Curie       |
+      | MoneyCog    | 2        | Marie Curie      | London st | London | England | 253181  | Visa     | 123456654321 | 12/24   | Marie Curie       |
       | MoneyCog    | 2        | Lise Meitner      | London st | London | England | 253181  | Visa     | 123456654321 | 12/24   | Lise Meitner      |
       | MoneyCog    | 2        | Rosalind Franklin | London st | London | England | 253181  | Visa     | 123456654321 | 12/24   | Rosalind Franklin |
 
